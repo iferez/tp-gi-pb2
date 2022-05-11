@@ -10,25 +10,39 @@ public class Calculadora {
 		Integer a; 
 		Integer b; 
 		Integer opcion; 
-		Integer resultado; 
+		Integer resultado = 0; 
 
 		do{ 
-			System.out.println("Ingrese su operación \n 1 para sumar \n 2 para restar \n 3 para multiplicar \n 4 para dividir"); 
+			System.out.println("Ingrese su operación \n 1 para multiplicar \n 2 para dividir \n 3 para sumar \n 4 para restar"); 
 			opcion = teclado.nextInt(); 
-		} while(opcion < 1 && opcion > 4);
-			System.out.println("Ingrese el primer numero");
-		a = teclado.nextInt(); System.out.println("Ingrese el segundo numero");
+		} while (opcion < 1 || opcion > 4);
+		System.out.println("Ingrese el primer numero");
+		a = teclado.nextInt();
+		System.out.println("Ingrese el segundo numero");
+		b = teclado.nextInt();
 
-		b = teclado.nextInt(); 
-
-		if(opcion.equals(1)){ 
-			resultado = a + b; }
-		else if(opcion.equals(2)){ 
-			resultado = a - b; }
-		else if(opcion.equals(3)){
-			resultado = a * b; }
-		else{ 
-			resultado = a / b; } 
-		System.out.println("El resultado es " + resultado.toString()); 
+		switch (opcion) {
+		case 1:
+			 System.out.println("La opcion elegida es la 1");
+			resultado = a * b;
+			break;
+		case 2:
+			 System.out.println("La opcion elegida es la 2");
+			resultado = a / b;
+			break;
+		case 3:
+			 System.out.println("La opcion elegida es la 3");
+			resultado = a + b;
+			break;
+		case 4:
+			 System.out.println("La opcion elegida es la 4");
+			resultado = a - b;
+			break;
+		default:
+			 System.out.println( "La opcion no existe" );
+			break;
+			 
 		}
+		System.out.println("El resultado es " + resultado.toString());
+}
 }
